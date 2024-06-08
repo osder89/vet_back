@@ -1,0 +1,75 @@
+type Query {
+    getRolById(id: ID!): Rol
+    getAllRoles: [Rol]
+    getUserById(id: ID!): User
+    getAllUsers: [User]
+    getPetById(id: ID!): Pet
+    getAllPets: [Pet]
+    getPetsByUserId(userId: ID!): [Pet]
+}
+
+type Mutation {
+    createRol(rolRequest: RolRequest): Rol
+    updateRol(id: ID!, name: String!): Rol
+    deleteRol(id: ID!): String
+    createUser(userRequest: UserRequest): User
+    updateUser(id: ID!, userRequest: UserRequest): User
+    deleteUser(id: ID!): String
+    createPet(petRequest: PetRequest): Pet
+    updatePet(id: ID!, petRequest: PetRequest): Pet
+    deletePet(id: ID!): String
+}
+
+type Rol {
+    id: ID
+    name: String!
+}
+
+input RolRequest {
+    name: String!
+}
+
+type User {
+    id: ID
+    names: String!
+    lastNames: String!
+    ci: String!
+    phone: String
+    address: String
+    email: String!
+    password: String!
+    roleId: String!
+    rol: Rol
+}
+
+input UserRequest {
+    names: String!
+    lastNames: String!
+    ci: String!
+    phone: String
+    address: String
+    email: String!
+    password: String!
+    roleId: String!
+}
+
+type Pet {
+    id: ID
+    name: String!
+    species: String!
+    breed: String!
+    age: Int!
+    gender: String!
+    color: String!
+    userId: String!
+}
+
+input PetRequest {
+    name: String!
+    species: String!
+    breed: String!
+    age: Int!
+    gender: String!
+    color: String!
+    userId: String!
+}
