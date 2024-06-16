@@ -11,9 +11,9 @@ type Query {
     getVisitsByDoctor(idDoctor: String!): [Visits]
     getConsultationsByIdPatient(id: ID!): [Consultations]
     getAllVaccines: [Vaccine]
-    getVaccineByIdPatient(id: ID!): Vaccine
+    getVaccineByIdPatient(id: ID!): [Vaccine]
     getAllAnalysis: [Analysis]
-    getAnalysisByIdPatient(id: ID!): Analysis
+    getAnalysisByIdPatient(id: ID!): [Analysis]
 }
 
 type Mutation {

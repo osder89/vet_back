@@ -47,11 +47,10 @@ public class VaccineServiceImpl implements VaccineService {
         }
     }
 
-
     @Override
     public List<Vaccine> getVaccineByIdPatient(String id) {
+
         return vaccineRepository.getVaccineByPatientId(id);
     }
-
 
 }
